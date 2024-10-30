@@ -1,9 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+// Step 2: Initialize variables
+let value = 0;
+let total = 1;
+
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  // Step 3: Modify value and total
+  value += 2;       // Increment value by 2
+  total += value;   // Add value to total
+
+  // Step 4: Change send text
+  res.send(`Total is: ${total}`);  // Use string interpolation
 });
 
 module.exports = router;
